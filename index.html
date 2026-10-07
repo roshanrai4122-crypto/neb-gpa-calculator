@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEBGPT AI Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         MAIN WEBSITE
+         ========================================== -->
+
+    <main class="calculator-container">
+
+        <!-- ==========================================
+             HEADER
+             ========================================== -->
+
+        <header class="website-header">
+
+            <div class="logo-area">
+                <span class="logo-icon">N</span>
+
+                <div>
+                    <h1>NEBGPT AI Calculator</h1>
+
+                    <p>
+                        Grade 12 GPA Calculator
+                    </p>
+                </div>
+            </div>
+
+            <p class="header-description">
+                Estimate your Grade 12 academic result
+                based on your subjects and grades.
+            </p>
+
+        </header>
+
+
+        <!-- ==========================================
+             STUDENT INFORMATION
+             ========================================== -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <span class="step-number">1</span>
+
+                <div>
+                    <h2>Student Information</h2>
+
+                    <p>
+                        Enter your basic information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="studentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="stream">
+                    Select Your Stream
+                </label>
+
+                <select id="stream">
+
+                    <option value="">
+                        Select your stream
+                    </option>
+
+                    <option value="science">
+                        Science
+                    </option>
+
+                    <option value="management">
+                        Management
+                    </option>
+
+                    <option value="humanities">
+                        Humanities
+                    </option>
+
+                    <option value="law">
+                        Law
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             OPTIONAL SUBJECT
+             ========================================== -->
+
+        <section
+            class="card hidden"
+            id="optionalSection"
+        >
+
+            <div class="section-heading">
+
+                <span class="step-number">2</span>
+
+                <div>
+                    <h2>Optional Subject</h2>
+
+                    <p id="optionalDescription">
+                        Select your optional subject.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="optionalSubjects">
+
+                <!-- JavaScript will create
+                     optional subject choices here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             SUBJECTS
+             ========================================== -->
+
+        <section
+            class="card hidden"
+            id="subjectsSection"
+        >
+
+            <div class="section-heading">
+
+                <span class="step-number">3</span>
+
+                <div>
+                    <h2>Your Subjects</h2>
+
+                    <p>
+                        These subjects are included
+                        automatically based on your stream.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="subjectsContainer">
+
+                <!-- JavaScript will create
+                     subject cards here -->
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             CALCULATE BUTTON
+             ========================================== -->
+
+        <section
+            class="card hidden"
+            id="calculateSection"
+        >
+
+            <button
+                type="button"
+                id="calculateButton"
+                class="calculate-button"
+            >
+                Calculate Estimated GPA
+            </button>
+
+            <p class="calculation-note">
+                This calculator provides an estimate
+                for reference and is not an official NEB result.
+            </p>
+
+        </section>
+
+
+        <!-- ==========================================
+             RESULT
+             ========================================== -->
+
+        <section
+            class="card hidden"
+            id="resultSection"
+        >
+
+            <div class="section-heading">
+
+                <span class="step-number result-step">
+                    ✓
+                </span>
+
+                <div>
+                    <h2>Your Estimated Result</h2>
+
+                    <p>
+                        Provisional result based on
+                        the information you entered.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- GPA SUMMARY -->
+
+            <div class="result-summary">
+
+                <div class="result-box">
+
+                    <span>
+                        Overall GPA
+                    </span>
+
+                    <strong id="overallGpa">
+                        0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Overall Grade
+                    </span>
+
+                    <strong id="overallGrade">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Total Credits
+                    </span>
+
+                    <strong id="totalCredits">
+                        0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- MARKSHEET -->
+
+            <div class="marksheet">
+
+                <div class="marksheet-header">
+
+                    <h2>
+                        National Examination Board
+                    </h2>
+
+                    <h3>
+                        Grade 12 - Provisional GPA Marksheet
+                    </h3>
+
+                    <p id="marksheetStudent">
+                        Student Name -
+                    </p>
+
+                    <p id="marksheetStream">
+                        Stream -
+                    </p>
+
+                    <p id="marksheetDate">
+                        Issued Date -
+                    </p>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Subject
+                                </th>
+
+                                <th>
+                                    Theory
+                                </th>
+
+                                <th>
+                                    Practical / Internal
+                                </th>
+
+                                <th>
+                                    Final Grade
+                                </th>
+
+                                <th>
+                                    Grade Point
+                                </th>
+
+                                <th>
+                                    Credit Hours
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="resultTableBody">
+
+                            <!-- JavaScript creates rows -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="marksheet-footer">
+
+                    <p>
+                        This marksheet is generated by
+                        NEBGPT AI Calculator for reference only.
+                    </p>
+
+                    <p>
+                        It is not an official NEB result.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULT ACTIONS -->
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="printButton"
+                    class="secondary-button"
+                >
+                    Print Result
+                </button>
+
+
+                <button
+                    type="button"
+                    id="resetButton"
+                    class="secondary-button"
+                >
+                    Start Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             FOOTER
+             ========================================== -->
+
+        <footer>
+
+            <p>
+                NEBGPT AI Calculator
+            </p>
+
+            <small>
+                Estimated results only. Always verify
+                your official result with NEB.
+            </small>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
